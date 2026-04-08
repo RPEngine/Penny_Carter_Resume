@@ -1,11 +1,12 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import fetch from "node-fetch"; // Needed on some Render environments
 
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 const resumeContext = `
@@ -48,29 +49,21 @@ If information is not in the resume, say:
 `;
 
 app.post("/chat", async (req, res) => {
-
   const question = req.body.message;
 
   try {
-
     const response = await fetch("https://api.featherless.ai/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${process.env.FEATHERLESS_KEY}`,
+        "Authorization": `Bearer ${process.env.FEATHERLESS_API_KEY}`, // FIXED
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
         model: "gpt-4.1-mini",
         temperature: 0.2,
         messages: [
-          {
-            role: "system",
-            content: resumeContext
-          },
-          {
-            role: "user",
-            content: question
-          }
+          { role: "system", content: resumeContext },
+          { role: "user", content: question }
         ]
       })
     });
@@ -84,15 +77,12 @@ app.post("/chat", async (req, res) => {
     res.json({ reply });
 
   } catch (error) {
-
-    res.json({
-      reply: "The AI server encountered an error."
-    });
-
+    console.error("AI Error:", error);
+    res.json({ reply: "The AI server encountered an error." });
   }
-
 });
 
 app.listen(3000, () => {
   console.log("AI server running at http://localhost:3000");
 });
+

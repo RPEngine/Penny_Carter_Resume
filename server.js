@@ -52,8 +52,8 @@ app.post("/chat", async (req, res) => {
 
   console.log("Received question:", question);
 
-  try {
-    const response = await fetch("https://api.featherless.ai/v1/chat/completions", {
+  try 
+  {const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${process.env.FEATHERLESS_API_KEY}`,

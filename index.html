@@ -1,151 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Penny Carter - Resume & AI Chatbot</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-body {
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  margin: 0;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #0D1117 0%, #161D27 60%, #0D1117 100%);
-  color: #CBD5E1;
-}
+    body {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #0D1117 0%, #161D27 60%, #0D1117 100%);
+      color: #CBD5E1;
+    }
 
-.wrapper {
-  max-width: 900px;
-  margin: auto;
-  background: #161D27;
-  padding: 2.5em;
-  border-radius: 16px;
-  border: 1px solid #2D3D50;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
+    .wrapper {
+      max-width: 900px;
+      margin: auto;
+      background: #161D27;
+      padding: 2.5em;
+      border-radius: 16px;
+      border: 1px solid #2D3D50;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
 
-h1 {
-  font-size: 2.4rem;
-  color: #5EEAD4;
-  margin-bottom: .3em;
-}
+    h1 {
+      font-size: 2.4rem;
+      color: #5EEAD4;
+      margin-bottom: 0.2em;
+    }
 
-h2 {
-  color: #99F6E4;
-  margin-bottom: .4em;
-}
+    h2 {
+      color: #99F6E4;
+      margin-bottom: 0.4em;
+    }
 
-.section {
-  margin-bottom: 2.2em;
-  padding-bottom: 1.5em;
-  border-bottom: 1px solid #2D3D50;
-}
+    .subtitle {
+      color: #94A3B8;
+      margin-top: 0;
+      margin-bottom: 1.4em;
+      font-size: 1rem;
+    }
 
-.contact div {
-  margin-bottom: 4px;
-}
+    .section {
+      margin-bottom: 2.2em;
+      padding-bottom: 1.5em;
+      border-bottom: 1px solid #2D3D50;
+    }
 
-.resume-label {
-  margin-right: 0.7em;
-  color: #94A3B8;
-}
+    .contact {
+      margin-bottom: 2em;
+    }
 
-.exp-entry {
-  margin-bottom: 1.4em;
-}
+    .contact div {
+      margin-bottom: 6px;
+    }
 
-.exp-title {
-  font-weight: bold;
-  color: #5EEAD4;
-}
+    .resume-label {
+      margin-right: 0.7em;
+      color: #94A3B8;
+      font-weight: 600;
+    }
 
-.exp-org-loc {
-  font-style: italic;
-  color: #94A3B8;
-}
+    .exp-entry {
+      margin-bottom: 1.5em;
+    }
 
-.ai-section {
-  padding: 1.2em;
-  background: #1E2A38;
-  border-radius: 12px;
-  border: 1px solid #2D3D50;
-}
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1em;
+      flex-wrap: wrap;
+      margin-bottom: 0.35em;
+    }
 
-.ai-section h2 {
-  color: #5EEAD4;
-}
+    .exp-title {
+      font-weight: bold;
+      color: #5EEAD4;
+    }
 
-.chatlog {
-  font-size: 0.95em;
-  border: 1px solid #2D3D50;
-  background: #0D1117;
-  padding: 0.8em 1em;
-  min-height: 70px;
-  border-radius: 8px;
-  margin-bottom: 0.7em;
-  max-height: 220px;
-  overflow-y: auto;
-}
+    .exp-org-loc {
+      font-style: italic;
+      color: #94A3B8;
+    }
 
-.chatbot-input {
-  width: 80%;
-  padding: .7em;
-  border-radius: 8px;
-  border: 1px solid #2D3D50;
-  background: #0D1117;
-  color: #CBD5E1;
-}
+    .exp-date {
+      color: #94A3B8;
+      font-size: 0.95em;
+    }
 
-button {
-  padding: .7em 1.2em;
-  border-radius: 8px;
-  border: none;
-  background: #0D9488;
-  color: white;
-  cursor: pointer;
-  transition: background .2s ease;
-}
+    .ai-section {
+      padding: 1.2em;
+      background: #1E2A38;
+      border-radius: 12px;
+      border: 1px solid #2D3D50;
+    }
 
-button:hover {
-  background: #0A7468;
-}
+    .ai-section h2 {
+      color: #5EEAD4;
+      margin-top: 0;
+    }
 
-small {
-  color: #94A3B8;
-}
+    .chatlog {
+      font-size: 0.95em;
+      border: 1px solid #2D3D50;
+      background: #0D1117;
+      padding: 0.8em 1em;
+      min-height: 70px;
+      border-radius: 8px;
+      margin-bottom: 0.7em;
+      max-height: 220px;
+      overflow-y: auto;
+    }
 
-@media (max-width: 700px) {
-  body {
-    padding: 20px 12px;
-  }
+    .chatbot-input {
+      width: 80%;
+      padding: 0.7em;
+      border-radius: 8px;
+      border: 1px solid #2D3D50;
+      background: #0D1117;
+      color: #CBD5E1;
+    }
 
-  .wrapper {
-    padding: 1.4em;
-  }
+    .chatbot-input::placeholder {
+      color: #94A3B8;
+    }
 
-  .chatbot-input {
-    width: 70%;
-  }
-}
-</style>
-    .section { margin-bottom: 2em; }
-    .contact, .ai-section { margin-bottom: 2em; }
-    .contact strong { display: inline-block; width: 110px; }
-    .exp-entry { margin-bottom: 1.2em; }
-    .exp-title { font-weight: bold; color: #174080; }
-    .exp-org-loc { font-style: italic; }
-    .resume-label { margin-right: 0.7em; color: #59636e; }
-    .ai-section { padding: 1em; background: #f0f4fa; border-radius: 10px; border: 1px solid #d3e2f8; }
-    .ai-section h2 { color: #0f3b73; }
-    .chatlog { font-size:1em; border:1px solid #aee; background:#f1faff; padding:0.6em 1em; min-height:60px; border-radius:7px; margin-bottom:0.7em; max-height:200px; overflow-y:auto;}
-    .chatbot-input { width: 90%; padding: .6em; margin-right:.3em; border-radius:8px;border:1px solid #bbb;}
+    button {
+      padding: 0.7em 1.2em;
+      border-radius: 8px;
+      border: none;
+      background: #0D9488;
+      color: white;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background: #0A7468;
+    }
+
+    small {
+      color: #94A3B8;
+    }
+
+    ul {
+      margin-top: 0.5em;
+      padding-left: 1.2em;
+    }
+
+    li {
+      margin-bottom: 0.45em;
+    }
+
     @media (max-width: 700px) {
-      .wrapper { padding: 1em .4em 2em;}
+      body {
+        padding: 20px 12px;
+      }
+
+      .wrapper {
+        padding: 1.4em;
+      }
+
+      .chatbot-input {
+        width: 68%;
+      }
+
+      .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25em;
+      }
     }
   </style>
 </head>
 <body>
   <div class="wrapper">
     <h1>Penny Carter</h1>
+    <p class="subtitle">Human Resources Student | Leadership | Employee Development</p>
+
     <div class="contact">
       <div><span class="resume-label">Location:</span>Middleburg, FL</div>
       <div><span class="resume-label">Email:</span>pjcarter2420@gmail.com</div>
@@ -163,7 +196,9 @@ small {
 
     <div class="section">
       <h2>Areas of Expertise</h2>
-      <p>Training & Development • Onboarding & Orientation • Employee Engagement • Scheduling & Workforce Planning • Performance Coaching • Conflict Resolution • Payroll & Timekeeping • Policy & Compliance • Process Improvement • HRIS Basics • People Analytics • Documentation & Reporting • Workplace Safety • Retention Strategies • Database Management • Office Organization</p>
+      <p>
+        Training & Development • Onboarding & Orientation • Employee Engagement • Scheduling & Workforce Planning • Performance Coaching • Conflict Resolution • Payroll & Timekeeping • Policy & Compliance • Process Improvement • HRIS Basics • People Analytics • Documentation & Reporting • Workplace Safety • Retention Strategies • Database Management • Office Organization
+      </p>
     </div>
 
     <div class="section">
@@ -175,16 +210,24 @@ small {
 
     <div class="section">
       <h2>Education</h2>
-      <div>Bachelor of Human Resource Management<br>
-      Southern New Hampshire University, Manchester, NH<br>
-      <em>Expected: Feb 2027 — Dean's List | Honor Roll - 2025</em></div>
+      <div>
+        Bachelor of Human Resource Management<br />
+        Southern New Hampshire University, Manchester, NH<br />
+        <em>Expected: Feb 2027 — Dean's List | Honor Roll - 2025</em>
+      </div>
     </div>
 
     <div class="section">
       <h2>Experience</h2>
+
       <div class="exp-entry">
-        <span class="exp-title">Store Associate</span> <span class="exp-org-loc">Circle K, Orange Park, FL</span>
-        <span style="float:right;color:#666;">Aug 2025 – Present</span><br>
+        <div class="exp-header">
+          <div>
+            <span class="exp-title">Store Associate</span>
+            <span class="exp-org-loc">Circle K, Orange Park, FL</span>
+          </div>
+          <span class="exp-date">Aug 2025 – Present</span>
+        </div>
         <ul>
           <li>Support team operations and coach new employees on store procedures, fostering engagement and compliance.</li>
           <li>Ensure adherence to company policies, age-restricted sales, and regulatory requirements.</li>
@@ -192,9 +235,15 @@ small {
           <li>Deliver high-quality customer service and resolve issues to reinforce positive workplace culture.</li>
         </ul>
       </div>
+
       <div class="exp-entry">
-        <span class="exp-title">Shift Manager</span> <span class="exp-org-loc">Burger King, Orange Park, FL</span>
-        <span style="float:right;color:#666;">Apr 2024 – Jun 2025</span><br>
+        <div class="exp-header">
+          <div>
+            <span class="exp-title">Shift Manager</span>
+            <span class="exp-org-loc">Burger King, Orange Park, FL</span>
+          </div>
+          <span class="exp-date">Apr 2024 – Jun 2025</span>
+        </div>
         <ul>
           <li>Managed daily staff schedules, shift coverage, and performance evaluations to optimize team efficiency.</li>
           <li>Coached and mentored team members, addressing conflicts and promoting positive workplace interactions.</li>
@@ -203,9 +252,15 @@ small {
           <li>Achieved high customer satisfaction scores through team management and process improvements.</li>
         </ul>
       </div>
+
       <div class="exp-entry">
-        <span class="exp-title">Customer Service Manager</span> <span class="exp-org-loc">McDonald's, Orange Park, FL</span>
-        <span style="float:right;color:#666;">Jul 2023 – Dec 2023</span><br>
+        <div class="exp-header">
+          <div>
+            <span class="exp-title">Customer Service Manager</span>
+            <span class="exp-org-loc">McDonald's, Orange Park, FL</span>
+          </div>
+          <span class="exp-date">Jul 2023 – Dec 2023</span>
+        </div>
         <ul>
           <li>Coached and developed frontline staff to improve performance, customer satisfaction, and compliance.</li>
           <li>Managed labor budgets, schedules, and shift documentation to ensure operational efficiency.</li>
@@ -213,9 +268,15 @@ small {
           <li>Maintained regulatory compliance and adherence to company policies.</li>
         </ul>
       </div>
+
       <div class="exp-entry">
-        <span class="exp-title">Special Operations Team Lead</span> <span class="exp-org-loc">Whataburger, Orange Park, FL</span>
-        <span style="float:right;color:#666;">May 2021 – Oct 2023</span><br>
+        <div class="exp-header">
+          <div>
+            <span class="exp-title">Special Operations Team Lead</span>
+            <span class="exp-org-loc">Whataburger, Orange Park, FL</span>
+          </div>
+          <span class="exp-date">May 2021 – Oct 2023</span>
+        </div>
         <ul>
           <li>Designed onboarding tools and delivered training for new employees and store openings across multiple sites.</li>
           <li>Developed staff engagement initiatives that contributed to improved retention and compliance.</li>
@@ -226,24 +287,26 @@ small {
     </div>
 
     <div class="ai-section">
-      <h2>🤖 Ask about Penny Carter</h2>
+      <h2>AI Resume Assistant</h2>
       <div id="chatlog" class="chatlog"></div>
       <form id="chat-form" onsubmit="return handleChat(event)">
-        <input type="text" id="chat-input" class="chatbot-input" placeholder="Ask me about Penny's skills, experience, degree..." required />
+        <input
+          type="text"
+          id="chat-input"
+          class="chatbot-input"
+          placeholder="Ask me about Penny's skills, experience, degree..."
+          required
+        />
         <button type="submit">Send</button>
       </form>
-      <small style="color:gray;">AI-powered answers about Penny's resume. No data is stored.</small>
+      <small>AI-powered answers about Penny's resume. No data is stored.</small>
     </div>
   </div>
+
   <script>
-    // This demo uses OpenAI's API directly. For "real" deployment, you must get a free API key (https://platform.openai.com/) and paste it below.
-    // AI answers are limited by browser security, quota, and API limits.
+    // This demo uses OpenAI's API directly. For "real" deployment, you must get a free API key and paste it below.
+    const OPENAI_API_KEY = "sk-PASTE-YOUR-KEY-HERE";
 
-    // ==== CONFIG ====
-    const OPENAI_API_KEY = "sk-PASTE-YOUR-KEY-HERE"; // <-- You need to generate and paste your key!
-    // If you don't have one yet, visit https://platform.openai.com/api-keys
-
-    // Your resume data (the bot will answer using only this info)
     const resumeData = `PENNY CARTER, Middleburg, FL | pjcarter2420@gmail.com | 904-408-6175
 
 PROFESSIONAL SUMMARY:
@@ -278,192 +341,64 @@ Customer Service Manager, McDonald's (Jul 2023–Dec 2023)
 Special Operations Team Lead, Whataburger (May 2021–Oct 2023)
 - Designed onboarding/training, delivered across multiple sites.
 - Improved retention, compliance, performance.
+
 Recruiter FAQ – Penny Carter
 
 Who is Penny Carter?
 
 Penny Carter is a Human Resources student and people-focused professional with experience in leadership, team training, customer service, and operations. She has spent several years working in fast-paced service environments where she supervised teams, trained staff, and helped maintain positive working conditions. Penny is currently completing a Bachelor of Science in Human Resource Management and is building toward roles that focus on employee support, onboarding, and people operations.
 
-
 What type of roles is Penny seeking?
 
 Penny is interested in early-career Human Resources roles such as HR Assistant, HR Coordinator, Onboarding Specialist, Training and Development Coordinator, People Operations Coordinator, and Employee Experience roles. She is particularly interested in positions where she can support employees, help teams succeed, and contribute to building positive workplace cultures.
-
 
 What are Penny’s strengths?
 
 Penny’s strengths include leadership, communication, conflict resolution, and team development. She has experience coaching employees, supporting new hires during onboarding, and helping teams work effectively in high-pressure environments. She is known for staying calm under pressure, listening carefully to people, and approaching challenges with fairness and practical problem solving.
 
-
 What leadership experience does Penny have?
 
 Penny has held leadership roles in multiple service organizations, including shift management and team leadership positions. In these roles she supervised team members, coordinated shift operations, trained new employees, and helped maintain service standards. She also supported staff development by coaching employees and helping them improve performance and confidence in their roles.
-
 
 How does Penny’s experience translate to Human Resources work?
 
 Many of Penny’s leadership and operational responsibilities overlap with core HR skills. She has experience with employee training, onboarding support, conflict resolution, communication, and team development. These experiences help her understand employee needs, workplace dynamics, and the importance of clear expectations and fair processes.
 
-
 What makes Penny a strong candidate for HR roles?
 
 Penny combines practical leadership experience with formal HR education. She understands how workplace policies and procedures affect employees in real situations because she has worked directly with teams on the front line. Her approach focuses on fairness, communication, and helping employees succeed while supporting organizational goals.
-
 
 What certifications or training has Penny completed?
 
 Penny has completed multiple professional development courses including training in People Analytics, QuickBooks Payroll, Python programming fundamentals, Outlook productivity tools, AI-powered people management, and workplace productivity tools. These courses help her stay current with both HR practices and modern workplace technology.
 
-
 What is Penny studying in school?
 
 Penny is currently pursuing a Bachelor of Science in Human Resource Management at Southern New Hampshire University. Her studies focus on topics such as talent acquisition, workforce planning, employee engagement, HR analytics, and the employee life cycle.
-
 
 How does Penny approach teamwork and workplace culture?
 
 Penny believes that strong workplaces are built on communication, fairness, and mutual respect. She values environments where employees feel supported and where leaders take time to listen and guide their teams. Her leadership style focuses on helping people grow while ensuring work gets done effectively.
 
-
 How does Penny handle conflict or difficult situations?
 
 Penny approaches conflict by listening carefully to all sides, identifying the underlying issue, and working toward practical solutions. Her experience in fast-paced service environments has helped her develop patience, professionalism, and the ability to remain calm while resolving problems.
-
 
 Why did Penny choose a career in Human Resources?
 
 Penny’s interest in HR developed through her leadership and training experiences. She saw how effective communication, fair treatment, and good management practices could make a significant difference in employee morale and team success. HR allows her to focus on helping organizations create environments where employees can perform well and feel supported.
 
-
 What kind of work environment does Penny thrive in?
 
 Penny performs well in collaborative environments where communication is clear, expectations are defined, and leaders support team development. She is comfortable in fast-paced workplaces and enjoys roles where she can help organize processes, support employees, and contribute to improving workplace systems.
-
 
 What motivates Penny professionally?
 
 Penny is motivated by helping people succeed in their roles and contributing to organizations that value their employees. She enjoys learning new skills, solving practical problems, and supporting teams so that both employees and organizations can perform at their best.
 
-
 What should employers know about Penny’s work ethic?
 
 Penny is dependable, adaptable, and committed to continuous learning. She consistently works to improve her skills through education and professional development. She approaches work with professionalism and takes pride in supporting both her team and the broader goals of the organization.
-
-
-—-----------------------------------------------------------------------------------------------------
-
-Personality Profile – Penny Carter
-
-Work Style
-
-Penny approaches work with a people-centered mindset. She believes that strong teams are built through communication, fairness, and clear expectations. She is comfortable working in fast-paced environments and focuses on keeping operations organized while supporting the people involved.
-
-Leadership Style
-
-Penny’s leadership style is supportive and practical. She prefers to lead by example, helping team members understand what needs to be done and how to do it well. She values coaching and encouragement rather than strict top-down direction, and she focuses on helping people improve their confidence and performance.
-
-Communication Approach
-
-Penny communicates clearly and directly while maintaining a respectful tone. She listens carefully before responding, which helps her understand problems fully before suggesting solutions. She believes that good communication prevents many workplace issues before they grow into larger conflicts.
-
-Problem-Solving Mindset
-
-When faced with challenges, Penny first tries to understand the root cause of the issue rather than only addressing the symptoms. She stays calm under pressure and works toward practical, fair solutions that support both employees and organizational goals.
-
-Team Collaboration
-
-Penny values teamwork and believes that collaboration leads to better outcomes. She enjoys helping team members learn new skills, supporting new employees as they adapt to their roles, and creating an environment where people feel comfortable asking questions.
-
-Professional Values
-
-The values that guide Penny’s work include fairness, accountability, respect, and continuous learning. She believes organizations succeed when employees feel supported and when leadership communicates expectations clearly.
-
-Learning and Growth
-
-Penny actively works to improve her skills through education and professional development. Her studies in Human Resource Management and additional training in analytics, payroll systems, and productivity tools demonstrate her commitment to continuous improvement.
-
-
-—------------------------------------------------------------------------------------------------------
-
-Transferable Skills Translator – Penny Carter
-
-Frontline Leadership → HR Foundations
-
-Experience supervising shifts and guiding team members translates into key HR skills such as employee support, coaching, performance feedback, and maintaining workplace standards.
-
-Staff Training → Onboarding and Development
-
-Training new employees and helping them adapt to workplace procedures aligns closely with HR responsibilities in onboarding, learning and development, and employee success.
-
-Customer Conflict Resolution → Employee Relations
-
-Handling customer complaints and resolving disputes builds the same communication and mediation skills used in employee relations and workplace conflict resolution.
-
-Team Coordination → Workforce Operations
-
-Managing shifts and coordinating staff schedules develops an understanding of workforce organization, operational efficiency, and team collaboration.
-
-Operational Problem Solving → HR Process Improvement
-
-Working in high-volume service environments requires identifying problems quickly and implementing practical solutions, which translates into HR process improvement and operational support.
-
-Coaching Employees → Performance Support
-
-Helping team members improve their performance through guidance and feedback supports the same skill set used in HR performance management and employee development.
-
-Maintaining Service Standards → Policy Awareness
-
-Ensuring that teams follow procedures and standards builds awareness of organizational policies, expectations, and accountability systems that are central to HR operations.
-
-Community Moderation Experience → Workplace Communication and Policy Interpretation
-
-Structured moderation and community management experience strengthens skills in fairness, documentation, rule interpretation, and conflict resolution. These competencies are directly relevant to HR work involving policy enforcement, employee communication, and workplace culture management.
-
-
-—--------------------------------------------------------------------------------------------------
-
-Recruiter Pitch Mode – Penny Carter
-
-Why should an organization consider hiring Penny Carter?
-
-Penny Carter combines practical leadership experience with formal Human Resources education. She has supervised teams, trained employees, and managed operations in fast-paced environments, which gives her a strong understanding of real workplace challenges. At the same time, she is completing a Bachelor of Science in Human Resource Management, strengthening her ability to apply structured HR practices such as workforce planning, employee engagement, and people analytics. This combination of real-world leadership and HR education allows her to support both employees and organizational goals effectively.
-
-
-What value would Penny bring to a team?
-
-Penny brings a balanced approach that focuses on both operational efficiency and employee support. She has experience guiding teams, helping new employees learn their roles, and maintaining consistent workplace standards. Her ability to communicate clearly, resolve conflicts, and stay organized in high-pressure environments allows her to contribute positively to team performance and workplace culture.
-
-
-What makes Penny different from other candidates?
-
-Penny’s background gives her a perspective that combines frontline leadership with HR education. She understands the day-to-day challenges employees and supervisors face because she has worked directly in team leadership roles. This experience helps her approach HR responsibilities with empathy, practical understanding, and a focus on solutions that work in real workplaces.
-
-
-How does Penny contribute to employee success?
-
-Penny focuses on helping employees succeed by providing clear guidance, supportive coaching, and open communication. She believes that employees perform best when expectations are clear and when they feel supported by leadership. Her experience training staff and assisting new hires has strengthened her ability to help people build confidence and develop their skills.
-
-
-How does Penny support organizational goals?
-
-Penny understands that effective HR practices must support both employees and the organization’s overall objectives. Her approach focuses on maintaining fair processes, encouraging strong communication, and supporting efficient team operations. By helping employees perform well and feel supported, she contributes to stronger team performance and long-term organizational stability.
-
-
-How does Penny approach professional growth?
-
-Penny actively works to expand her knowledge through education and professional development. She is currently completing a degree in Human Resource Management and has completed additional training in areas such as People Analytics, payroll systems, workplace productivity tools, and modern workplace technology. This commitment to learning reflects her long-term dedication to building a strong HR career.
-
-
-What type of environment is Penny best suited for?
-
-Penny performs well in collaborative environments where communication is clear and leadership supports employee development. She is comfortable in fast-paced workplaces and values organizations that prioritize teamwork, fairness, and continuous improvement. She is especially interested in environments where HR plays an active role in supporting employees and strengthening workplace culture.
-
-
-What are Penny’s long-term career goals?
-
-Penny’s long-term goal is to build a career in Human Resources where she can contribute to employee development, organizational effectiveness, and positive workplace culture. She is particularly interested in roles that involve onboarding, training, employee support, and people operations. Over time, she hopes to continue growing within HR and take on increasing responsibility in supporting workforce development and organizational strategy.
-
-
 `;
 
     const chatlogEl = document.getElementById("chatlog");
@@ -481,16 +416,22 @@ Penny’s long-term goal is to build a career in Human Resources where she can c
       e.preventDefault();
       const q = chatInput.value.trim();
       if (!q) return false;
+
       printMessage(q, "You");
       chatInput.value = "";
       printMessage("Thinking...", "AI");
 
-      // Call OpenAI API (gpt-3.5-turbo shown here)
       try {
         const messages = [
-          { role: "system", content: "You are an assistant who helps answer questions about Penny Carter's resume and work experience, using only the data below.\n\n" + resumeData },
+          {
+            role: "system",
+            content:
+              "You are an assistant who helps answer questions about Penny Carter's resume and work experience, using only the data below.\n\n" +
+              resumeData,
+          },
           { role: "user", content: q }
         ];
+
         const resp = await fetch("https://api.openai.com/v1/chat/completions", {
           method: "POST",
           headers: {
@@ -506,9 +447,11 @@ Penny’s long-term goal is to build a career in Human Resources where she can c
             temperature: 0
           })
         });
+
         const data = await resp.json();
+
         if (data.choices && data.choices[0] && data.choices[0].message) {
-          chatlogEl.lastChild.remove(); // Remove "Thinking..."
+          chatlogEl.lastChild.remove();
           printMessage(data.choices[0].message.content, "AI");
         } else if (data.error && data.error.message) {
           chatlogEl.lastChild.remove();
@@ -521,6 +464,7 @@ Penny’s long-term goal is to build a career in Human Resources where she can c
         chatlogEl.lastChild.remove();
         printMessage("[Connection error: " + err + "]", "AI");
       }
+
       return false;
     }
   </script>

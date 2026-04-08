@@ -53,14 +53,14 @@ app.post("/chat", async (req, res) => {
   console.log("Received question:", question);
 
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    const response = await fetch("https://router.huggingface.co/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
+        "Authorization": `Bearer ${process.env.HUGGINGFACE_API_TOKEN}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "gpt-4.1-mini",
+        model: "meta-llama/Llama-3.1-8B-Instruct:novita",
         temperature: 0.2,
         messages: [
           { role: "system", content: resumeContext },
@@ -70,7 +70,7 @@ app.post("/chat", async (req, res) => {
     });
 
     const data = await response.json();
-    console.log("OpenAI raw response:", data);
+    console.log("HF raw response:", data);
 
     const reply =
       data?.choices?.[0]?.message?.content ||

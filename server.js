@@ -50,11 +50,13 @@ If information is not in the resume, say:
 app.post("/chat", async (req, res) => {
   const question = req.body.message;
 
+  console.log("Received question:", question);
+
   try {
     const response = await fetch("https://api.featherless.ai/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${process.env.FEATHERLESS_API_KEY}`, // FIXED
+        "Authorization": `Bearer ${process.env.FEATHERLESS_API_KEY}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
@@ -66,6 +68,24 @@ app.post("/chat", async (req, res) => {
         ]
       })
     });
+
+    const data = await response.json();
+    console.log("Featherless raw response:", data);
+
+    const reply =
+      data?.choices?.[0]?.message?.content ||
+      "The assistant could not generate a response.";
+
+    res.json({ reply });
+
+  } catch (error) {
+    console.error("AI Error:", error);
+    res.status(500).json({
+      reply: "Server error",
+      error: error.message
+    });
+  }
+});
 
     const data = await response.json();
 

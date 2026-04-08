@@ -87,20 +87,6 @@ app.post("/chat", async (req, res) => {
   }
 });
 
-    const data = await response.json();
-
-    const reply =
-      data?.choices?.[0]?.message?.content ||
-      "The assistant could not generate a response.";
-
-    res.json({ reply });
-
-  } catch (error) {
-    console.error("AI Error:", error);
-    res.json({ reply: "The AI server encountered an error." });
-  }
-});
-
 app.listen(3000, () => {
   console.log("AI server running at http://localhost:3000");
 });

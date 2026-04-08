@@ -2,6 +2,9 @@ const chatlog = document.getElementById("chatlog");
 const input = document.getElementById("chat-input");
 const form = document.getElementById("chat-form");
 
+// Change this to your Render backend URL
+const API_URL = "https://YOUR-RENDER-URL/chat";
+
 function addMessage(text, sender) {
   const msg = document.createElement("div");
   msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
@@ -19,27 +22,30 @@ async function handleChat(e) {
   addMessage(question, "You");
   input.value = "";
 
-  addMessage("Thinking...", "AI");
+  // Temporary placeholder while waiting
+  const thinkingMsg = document.createElement("div");
+  thinkingMsg.innerHTML = `<strong>AI:</strong> Thinking...`;
+  thinkingMsg.style.marginBottom = "8px";
+  chatlog.appendChild(thinkingMsg);
+  chatlog.scrollTop = chatlog.scrollHeight;
 
   try {
-    const response = await fetch("http://localhost:3000/chat", {
+    const response = await fetch(API_URL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: question })
     });
 
     const data = await response.json();
 
-    chatlog.lastChild.remove();
-
+    thinkingMsg.remove();
     addMessage(data.reply, "AI");
 
   } catch (error) {
-    chatlog.lastChild.remove();
-    addMessage("Connection error. Is the AI server running?", "AI");
+    thinkingMsg.remove();
+    addMessage("Connection error — your AI server may be offline.", "AI");
   }
 }
 
-form.addEventListener("submit", handleChat);ndleChat);handleChat);
+form.addEventListener("submit", handleChat);
+, handleChat);ndleChat);handleChat);

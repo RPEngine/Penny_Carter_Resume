@@ -1,193 +1,147 @@
-/* Global Page Styling */
-
 body {
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
   margin: 0;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #0D1117 0%, #161D27 60%, #0D1117 100%);
-  color: #CBD5E1;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #1a1a1a;
+  color: #e6f7f7;
 }
-
-/* Main Container */
 
 .wrapper {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: auto;
-  background: #161D27;
-  padding: 2.5em;
-  border-radius: 16px;
-  border: 1px solid #2D3D50;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* Header */
+.site-header {
+  background: #0f2e2e;
+  padding: 25px;
+  border-bottom: 3px solid #00b5ad;
+}
 
 .site-header h1 {
-  font-size: 2.4rem;
-  color: #5EEAD4;
-  margin-bottom: 0.2em;
+  margin: 0;
+  color: #5fd1c9;
 }
 
 .subtitle {
-  color: #94A3B8;
-  margin-top: 0;
-  margin-bottom: 1.4em;
-  font-size: 1rem;
+  color: #9be3df;
+  margin-top: 5px;
 }
 
-/* Contact Info */
-
-.contact div {
-  margin-bottom: 6px;
-  color: #CBD5E1;
+.contact {
+  margin-top: 10px;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
 }
-
-/* Two Column Layout */
 
 .main-layout {
   display: flex;
   gap: 30px;
-  align-items: flex-start;
+  padding: 30px;
 }
-
-/* Resume Column */
 
 .resume-column {
-  flex: 2;
+  flex: 3;
 }
-
-/* AI Assistant Column */
 
 .ai-column {
   flex: 1;
-  position: sticky;
-  top: 30px;
 }
-
-/* Section Styling */
 
 .section {
-  margin-bottom: 2.2em;
-  padding-bottom: 1.5em;
-  border-bottom: 1px solid #2D3D50;
+  margin-bottom: 30px;
 }
 
-h2 {
-  color: #99F6E4;
-  margin-bottom: 0.5em;
+.section h2 {
+  color: #5fd1c9;
+  border-bottom: 2px solid #00b5ad;
+  padding-bottom: 5px;
 }
-
-/* Experience Layout */
 
 .exp-entry {
-  margin-bottom: 1.5em;
+  margin-top: 15px;
 }
 
 .exp-header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  gap: 1em;
-  flex-wrap: wrap;
-  margin-bottom: 0.35em;
+  font-weight: bold;
 }
 
 .exp-title {
-  font-weight: bold;
-  color: #5EEAD4;
+  color: #9be3df;
 }
 
 .exp-org-loc {
-  font-style: italic;
-  color: #94A3B8;
+  margin-left: 8px;
+  color: #cccccc;
 }
 
 .exp-date {
-  color: #94A3B8;
-  font-size: 0.95em;
+  color: #bbbbbb;
 }
 
-/* AI Assistant Panel */
-
 .ai-section {
-  padding: 1.2em;
-  background: #1E2A38;
-  border-radius: 12px;
-  border: 1px solid #2D3D50;
+  background: #0f2e2e;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #00b5ad;
+  position: sticky;
+  top: 20px;
 }
 
 .ai-section h2 {
-  color: #5EEAD4;
+  color: #5fd1c9;
   margin-top: 0;
 }
 
-/* Chat Window */
-
 .chatlog {
-  font-size: 0.95em;
-  border: 1px solid #2D3D50;
-  background: #0D1117;
-  padding: 0.8em 1em;
-  min-height: 80px;
-  border-radius: 8px;
-  margin-bottom: 0.7em;
-  max-height: 260px;
+  height: 300px;
   overflow-y: auto;
+  background: #061616;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
-
-/* Chat Input */
 
 .chatbot-input {
-  width: 65%;
-  padding: 0.7em;
-  border-radius: 8px;
-  border: 1px solid #2D3D50;
-  background: #0D1117;
-  color: #CBD5E1;
+  width: 70%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
 }
-
-.chatbot-input::placeholder {
-  color: #94A3B8;
-}
-
-/* Buttons */
 
 button {
-  padding: 0.7em 1.2em;
-  border-radius: 8px;
+  padding: 8px 12px;
   border: none;
-  background: #0D9488;
-  color: white;
+  background: #00b5ad;
+  color: black;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.2s ease;
 }
 
 button:hover {
-  background: #0A7468;
+  background: #5fd1c9;
 }
-
-/* Footer */
 
 .site-footer {
-  margin-top: 2em;
-  padding-top: 1em;
-  border-top: 1px solid #2D3D50;
-  color: #94A3B8;
   text-align: center;
+  padding: 20px;
+  border-top: 3px solid #00b5ad;
+  background: #0f2e2e;
 }
 
-/* Mobile Layout */
+/* Mobile */
 
 @media (max-width: 900px) {
-
   .main-layout {
     flex-direction: column;
   }
 
   .ai-column {
-    position: static;
+    order: -1;
   }
-
+}
   .chatbot-input {
     width: 60%;
   }

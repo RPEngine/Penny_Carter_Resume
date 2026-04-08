@@ -1,27 +1,28 @@
-const chatlogEl = document.getElementById("chatlog");
-const chatInput = document.getElementById("chat-input");
-const chatForm = document.getElementById("chat-form");
+const chatlog = document.getElementById("chatlog");
+const input = document.getElementById("chat-input");
+const form = document.getElementById("chat-form");
 
-function printMessage(message, sender) {
-  const line = document.createElement("div");
-  line.innerHTML = "<strong>" + sender + ":</strong> " + message;
-  line.style.marginBottom = "8px";
-  chatlogEl.appendChild(line);
-  chatlogEl.scrollTop = chatlogEl.scrollHeight;
+function addMessage(text, sender) {
+  const msg = document.createElement("div");
+  msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+  msg.style.marginBottom = "8px";
+  chatlog.appendChild(msg);
+  chatlog.scrollTop = chatlog.scrollHeight;
 }
 
-async function handleChat(event) {
-  event.preventDefault();
+async function handleChat(e) {
+  e.preventDefault();
 
-  const question = chatInput.value.trim();
-  if (!question) return false;
+  const question = input.value.trim();
+  if (!question) return;
 
-  printMessage(question, "You");
-  chatInput.value = "";
-  printMessage("Thinking...", "AI");
+  addMessage(question, "You");
+  input.value = "";
+
+  addMessage("Thinking...", "AI");
 
   try {
-    const response = await fetch("http://localhost:3000/api/chat", {
+    const response = await fetch("http://localhost:3000/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -31,21 +32,14 @@ async function handleChat(event) {
 
     const data = await response.json();
 
-    chatlogEl.lastChild.remove();
+    chatlog.lastChild.remove();
 
-    if (data.reply) {
-      printMessage(data.reply, "AI");
-    } else if (data.error) {
-      printMessage("Error: " + data.error, "AI");
-    } else {
-      printMessage("No response received.", "AI");
-    }
+    addMessage(data.reply, "AI");
+
   } catch (error) {
-    chatlogEl.lastChild.remove();
-    printMessage("Connection error. Make sure the AI server is running.", "AI");
+    chatlog.lastChild.remove();
+    addMessage("Connection error. Is the AI server running?", "AI");
   }
-
-  return false;
 }
 
-chatForm.addEventListener("submit", handleChat);handleChat);
+form.addEventListener("submit", handleChat);ndleChat);handleChat);

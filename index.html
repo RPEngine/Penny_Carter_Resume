@@ -4,469 +4,157 @@
   <meta charset="UTF-8" />
   <title>Penny Carter - Resume & AI Chatbot</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body {
-      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      padding: 40px 20px;
-      background: linear-gradient(135deg, #0D1117 0%, #161D27 60%, #0D1117 100%);
-      color: #CBD5E1;
-    }
-
-    .wrapper {
-      max-width: 900px;
-      margin: auto;
-      background: #161D27;
-      padding: 2.5em;
-      border-radius: 16px;
-      border: 1px solid #2D3D50;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    }
-
-    h1 {
-      font-size: 2.4rem;
-      color: #5EEAD4;
-      margin-bottom: 0.2em;
-    }
-
-    h2 {
-      color: #99F6E4;
-      margin-bottom: 0.4em;
-    }
-
-    .subtitle {
-      color: #94A3B8;
-      margin-top: 0;
-      margin-bottom: 1.4em;
-      font-size: 1rem;
-    }
-
-    .section {
-      margin-bottom: 2.2em;
-      padding-bottom: 1.5em;
-      border-bottom: 1px solid #2D3D50;
-    }
-
-    .contact {
-      margin-bottom: 2em;
-    }
-
-    .contact div {
-      margin-bottom: 6px;
-    }
-
-    .resume-label {
-      margin-right: 0.7em;
-      color: #94A3B8;
-      font-weight: 600;
-    }
-
-    .exp-entry {
-      margin-bottom: 1.5em;
-    }
-
-    .exp-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 1em;
-      flex-wrap: wrap;
-      margin-bottom: 0.35em;
-    }
-
-    .exp-title {
-      font-weight: bold;
-      color: #5EEAD4;
-    }
-
-    .exp-org-loc {
-      font-style: italic;
-      color: #94A3B8;
-    }
-
-    .exp-date {
-      color: #94A3B8;
-      font-size: 0.95em;
-    }
-
-    .ai-section {
-      padding: 1.2em;
-      background: #1E2A38;
-      border-radius: 12px;
-      border: 1px solid #2D3D50;
-    }
-
-    .ai-section h2 {
-      color: #5EEAD4;
-      margin-top: 0;
-    }
-
-    .chatlog {
-      font-size: 0.95em;
-      border: 1px solid #2D3D50;
-      background: #0D1117;
-      padding: 0.8em 1em;
-      min-height: 70px;
-      border-radius: 8px;
-      margin-bottom: 0.7em;
-      max-height: 220px;
-      overflow-y: auto;
-    }
-
-    .chatbot-input {
-      width: 80%;
-      padding: 0.7em;
-      border-radius: 8px;
-      border: 1px solid #2D3D50;
-      background: #0D1117;
-      color: #CBD5E1;
-    }
-
-    .chatbot-input::placeholder {
-      color: #94A3B8;
-    }
-
-    button {
-      padding: 0.7em 1.2em;
-      border-radius: 8px;
-      border: none;
-      background: #0D9488;
-      color: white;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-
-    button:hover {
-      background: #0A7468;
-    }
-
-    small {
-      color: #94A3B8;
-    }
-
-    ul {
-      margin-top: 0.5em;
-      padding-left: 1.2em;
-    }
-
-    li {
-      margin-bottom: 0.45em;
-    }
-
-    @media (max-width: 700px) {
-      body {
-        padding: 20px 12px;
-      }
-
-      .wrapper {
-        padding: 1.4em;
-      }
-
-      .chatbot-input {
-        width: 68%;
-      }
-
-      .exp-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.25em;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="wrapper">
-    <h1>Penny Carter</h1>
-    <p class="subtitle">Human Resources Student | Leadership | Employee Development</p>
 
-    <div class="contact">
-      <div><span class="resume-label">Location:</span>Middleburg, FL</div>
-      <div><span class="resume-label">Email:</span>pjcarter2420@gmail.com</div>
-      <div><span class="resume-label">Phone:</span>904-408-6175</div>
-    </div>
+    <header class="site-header">
+      <h1>Penny Carter</h1>
+      <p class="subtitle">Human Resources Student | Leadership | Employee Development</p>
 
-    <div class="section">
-      <h2>Professional Summary</h2>
-      <p>
-        Emerging HR professional pursuing a Bachelor's in Human Resource Management, with a strong foundation in employee relations, performance coaching, and compliance.
-        Brings 4+ years of supervisory experience leading diverse teams, training new hires, and improving workplace engagement in fast-paced environments.
-        Excited to contribute to an HR department in an entry-level role while continuing to develop practical expertise in recruiting, onboarding, and workforce planning.
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>Areas of Expertise</h2>
-      <p>
-        Training & Development • Onboarding & Orientation • Employee Engagement • Scheduling & Workforce Planning • Performance Coaching • Conflict Resolution • Payroll & Timekeeping • Policy & Compliance • Process Improvement • HRIS Basics • People Analytics • Documentation & Reporting • Workplace Safety • Retention Strategies • Database Management • Office Organization
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>Training & Certifications</h2>
-      <p>
-        <strong>2025:</strong> Microsoft Office 365 | QuickBooks Payroll | HRIS Basics | People Analytics (Intro) | Python (Beginner) | Outlook | AI Productivity Tools
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>Education</h2>
-      <div>
-        Bachelor of Human Resource Management<br />
-        Southern New Hampshire University, Manchester, NH<br />
-        <em>Expected: Feb 2027 — Dean's List | Honor Roll - 2025</em>
+      <div class="contact">
+        <div><strong>Location:</strong> Middleburg, FL</div>
+        <div><strong>Email:</strong> pjcarter2420@gmail.com</div>
+        <div><strong>Phone:</strong> 904-408-6175</div>
       </div>
-    </div>
+    </header>
 
-    <div class="section">
-      <h2>Experience</h2>
+    <div class="main-layout">
 
-      <div class="exp-entry">
-        <div class="exp-header">
-          <div>
-            <span class="exp-title">Store Associate</span>
-            <span class="exp-org-loc">Circle K, Orange Park, FL</span>
+      <main class="resume-column">
+
+        <section class="section">
+          <h2>Professional Summary</h2>
+          <p>
+            Emerging HR professional pursuing a Bachelor's in Human Resource Management, with a strong foundation in employee relations, performance coaching, and compliance.
+            Brings 4+ years of supervisory experience leading diverse teams, training new hires, and improving workplace engagement in fast-paced environments.
+            Excited to contribute to an HR department in an entry-level role while continuing to develop practical expertise in recruiting, onboarding, and workforce planning.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Areas of Expertise</h2>
+          <p>
+            Training & Development • Onboarding & Orientation • Employee Engagement • Scheduling & Workforce Planning • Performance Coaching • Conflict Resolution • Payroll & Timekeeping • Policy & Compliance • Process Improvement • HRIS Basics • People Analytics • Documentation & Reporting • Workplace Safety • Retention Strategies • Database Management • Office Organization
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Training & Certifications</h2>
+          <p>
+            <strong>2025:</strong> Microsoft Office 365 | QuickBooks Payroll | HRIS Basics | People Analytics (Intro) | Python (Beginner) | Outlook | AI Productivity Tools
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Education</h2>
+          <p>
+            Bachelor of Human Resource Management<br />
+            Southern New Hampshire University, Manchester, NH<br />
+            <em>Expected: Feb 2027 — Dean's List | Honor Roll - 2025</em>
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Experience</h2>
+
+          <div class="exp-entry">
+            <div class="exp-header">
+              <div>
+                <span class="exp-title">Store Associate</span>
+                <span class="exp-org-loc">Circle K, Orange Park, FL</span>
+              </div>
+              <span class="exp-date">Aug 2025 – Present</span>
+            </div>
+            <ul>
+              <li>Support team operations and coach new employees on store procedures, fostering engagement and compliance.</li>
+              <li>Ensure adherence to company policies, age-restricted sales, and regulatory requirements.</li>
+              <li>Assist in scheduling coverage and coordinating team tasks to maintain efficient operations.</li>
+              <li>Deliver high-quality customer service and resolve issues to reinforce positive workplace culture.</li>
+            </ul>
           </div>
-          <span class="exp-date">Aug 2025 – Present</span>
-        </div>
-        <ul>
-          <li>Support team operations and coach new employees on store procedures, fostering engagement and compliance.</li>
-          <li>Ensure adherence to company policies, age-restricted sales, and regulatory requirements.</li>
-          <li>Assist in scheduling coverage and coordinating team tasks to maintain efficient operations.</li>
-          <li>Deliver high-quality customer service and resolve issues to reinforce positive workplace culture.</li>
-        </ul>
-      </div>
 
-      <div class="exp-entry">
-        <div class="exp-header">
-          <div>
-            <span class="exp-title">Shift Manager</span>
-            <span class="exp-org-loc">Burger King, Orange Park, FL</span>
+          <div class="exp-entry">
+            <div class="exp-header">
+              <div>
+                <span class="exp-title">Shift Manager</span>
+                <span class="exp-org-loc">Burger King, Orange Park, FL</span>
+              </div>
+              <span class="exp-date">Apr 2024 – Jun 2025</span>
+            </div>
+            <ul>
+              <li>Managed daily staff schedules, shift coverage, and performance evaluations to optimize team efficiency.</li>
+              <li>Coached and mentored team members, addressing conflicts and promoting positive workplace interactions.</li>
+              <li>Maintained compliance with labor laws, safety standards, and operational policies.</li>
+              <li>Oversaw employee onboarding and training for new hires, ensuring consistent service quality.</li>
+              <li>Achieved high customer satisfaction scores through team management and process improvements.</li>
+            </ul>
           </div>
-          <span class="exp-date">Apr 2024 – Jun 2025</span>
-        </div>
-        <ul>
-          <li>Managed daily staff schedules, shift coverage, and performance evaluations to optimize team efficiency.</li>
-          <li>Coached and mentored team members, addressing conflicts and promoting positive workplace interactions.</li>
-          <li>Maintained compliance with labor laws, safety standards, and operational policies.</li>
-          <li>Oversaw employee onboarding and training for new hires, ensuring consistent service quality.</li>
-          <li>Achieved high customer satisfaction scores through team management and process improvements.</li>
-        </ul>
-      </div>
 
-      <div class="exp-entry">
-        <div class="exp-header">
-          <div>
-            <span class="exp-title">Customer Service Manager</span>
-            <span class="exp-org-loc">McDonald's, Orange Park, FL</span>
+          <div class="exp-entry">
+            <div class="exp-header">
+              <div>
+                <span class="exp-title">Customer Service Manager</span>
+                <span class="exp-org-loc">McDonald's, Orange Park, FL</span>
+              </div>
+              <span class="exp-date">Jul 2023 – Dec 2023</span>
+            </div>
+            <ul>
+              <li>Coached and developed frontline staff to improve performance, customer satisfaction, and compliance.</li>
+              <li>Managed labor budgets, schedules, and shift documentation to ensure operational efficiency.</li>
+              <li>Implemented process improvements to enhance staff engagement and team communication.</li>
+              <li>Maintained regulatory compliance and adherence to company policies.</li>
+            </ul>
           </div>
-          <span class="exp-date">Jul 2023 – Dec 2023</span>
-        </div>
-        <ul>
-          <li>Coached and developed frontline staff to improve performance, customer satisfaction, and compliance.</li>
-          <li>Managed labor budgets, schedules, and shift documentation to ensure operational efficiency.</li>
-          <li>Implemented process improvements to enhance staff engagement and team communication.</li>
-          <li>Maintained regulatory compliance and adherence to company policies.</li>
-        </ul>
-      </div>
 
-      <div class="exp-entry">
-        <div class="exp-header">
-          <div>
-            <span class="exp-title">Special Operations Team Lead</span>
-            <span class="exp-org-loc">Whataburger, Orange Park, FL</span>
+          <div class="exp-entry">
+            <div class="exp-header">
+              <div>
+                <span class="exp-title">Special Operations Team Lead</span>
+                <span class="exp-org-loc">Whataburger, Orange Park, FL</span>
+              </div>
+              <span class="exp-date">May 2021 – Oct 2023</span>
+            </div>
+            <ul>
+              <li>Designed onboarding tools and delivered training for new employees and store openings across multiple sites.</li>
+              <li>Developed staff engagement initiatives that contributed to improved retention and compliance.</li>
+              <li>Monitored employee performance, provided coaching, and supported conflict resolution.</li>
+              <li>Assisted management with hiring and scheduling to optimize operational efficiency.</li>
+            </ul>
           </div>
-          <span class="exp-date">May 2021 – Oct 2023</span>
+        </section>
+
+      </main>
+
+      <aside class="ai-column">
+        <div class="ai-section">
+          <h2>AI Resume Assistant</h2>
+          <div id="chatlog" class="chatlog"></div>
+
+          <form id="chat-form" onsubmit="return handleChat(event)">
+            <input
+              type="text"
+              id="chat-input"
+              class="chatbot-input"
+              placeholder="Ask about Penny's experience, skills, degree..."
+              required
+            />
+            <button type="submit">Send</button>
+          </form>
+
+          <small>AI-powered answers about Penny's resume.</small>
         </div>
-        <ul>
-          <li>Designed onboarding tools and delivered training for new employees and store openings across multiple sites.</li>
-          <li>Developed staff engagement initiatives that contributed to improved retention and compliance.</li>
-          <li>Monitored employee performance, provided coaching, and supported conflict resolution.</li>
-          <li>Assisted management with hiring and scheduling to optimize operational efficiency.</li>
-        </ul>
-      </div>
+      </aside>
+
     </div>
 
-    <div class="ai-section">
-      <h2>AI Resume Assistant</h2>
-      <div id="chatlog" class="chatlog"></div>
-      <form id="chat-form" onsubmit="return handleChat(event)">
-        <input
-          type="text"
-          id="chat-input"
-          class="chatbot-input"
-          placeholder="Ask me about Penny's skills, experience, degree..."
-          required
-        />
-        <button type="submit">Send</button>
-      </form>
-      <small>AI-powered answers about Penny's resume. No data is stored.</small>
-    </div>
+    <footer class="site-footer">
+      <p>Penny Carter | Human Resources</p>
+    </footer>
+
   </div>
 
-  <script>
-    // This demo uses OpenAI's API directly. For "real" deployment, you must get a free API key and paste it below.
-    const OPENAI_API_KEY = "sk-PASTE-YOUR-KEY-HERE";
-
-    const resumeData = `PENNY CARTER, Middleburg, FL | pjcarter2420@gmail.com | 904-408-6175
-
-PROFESSIONAL SUMMARY:
-Emerging HR professional pursuing a Bachelor’s in Human Resource Management. 4+ years' supervisory experience leading diverse teams, training new hires, and improving workplace engagement. Expertise: Employee relations, performance coaching, training, compliance, onboarding, recruiting, workforce planning.
-
-AREAS OF EXPERTISE:
-Training & Development, Onboarding & Orientation, Employee Engagement, Scheduling, Workforce Planning, Performance Coaching, Conflict Resolution, Payroll, Policy, Process Improvement, HRIS, People Analytics, Reporting, Safety, Retention, Office Organization.
-
-TRAINING/CERTIFICATIONS:
-Microsoft Office 365, QuickBooks Payroll, HRIS Basics, People Analytics (Intro), Python (Beginner), Outlook, AI Tools.
-
-EDUCATION:
-Bachelor of Human Resource Management (In Progress, expected Feb 2027)
-Southern New Hampshire University, Manchester, NH. Dean's List, Honor Roll 2025.
-
-EXPERIENCE (most recent first):
-Store Associate, Circle K (Aug 2025–Present)
-- Supported team operations, coached employees, improved engagement and compliance.
-- Ensured policy and regulatory adherence.
-- Covered scheduling/coordination, maintained efficient operations.
-
-Shift Manager, Burger King (Apr 2024–Jun 2025)
-- Managed staff schedules, shift coverage, performance.
-- Coached team, addressed conflicts, improved workplace interactions.
-- Maintained compliance with labor/safety standards and policies.
-
-Customer Service Manager, McDonald's (Jul 2023–Dec 2023)
-- Developed staff, improved customer satisfaction, managed budgets/schedules.
-- Improved staff engagement and comms.
-- Maintained compliance.
-
-Special Operations Team Lead, Whataburger (May 2021–Oct 2023)
-- Designed onboarding/training, delivered across multiple sites.
-- Improved retention, compliance, performance.
-
-Recruiter FAQ – Penny Carter
-
-Who is Penny Carter?
-
-Penny Carter is a Human Resources student and people-focused professional with experience in leadership, team training, customer service, and operations. She has spent several years working in fast-paced service environments where she supervised teams, trained staff, and helped maintain positive working conditions. Penny is currently completing a Bachelor of Science in Human Resource Management and is building toward roles that focus on employee support, onboarding, and people operations.
-
-What type of roles is Penny seeking?
-
-Penny is interested in early-career Human Resources roles such as HR Assistant, HR Coordinator, Onboarding Specialist, Training and Development Coordinator, People Operations Coordinator, and Employee Experience roles. She is particularly interested in positions where she can support employees, help teams succeed, and contribute to building positive workplace cultures.
-
-What are Penny’s strengths?
-
-Penny’s strengths include leadership, communication, conflict resolution, and team development. She has experience coaching employees, supporting new hires during onboarding, and helping teams work effectively in high-pressure environments. She is known for staying calm under pressure, listening carefully to people, and approaching challenges with fairness and practical problem solving.
-
-What leadership experience does Penny have?
-
-Penny has held leadership roles in multiple service organizations, including shift management and team leadership positions. In these roles she supervised team members, coordinated shift operations, trained new employees, and helped maintain service standards. She also supported staff development by coaching employees and helping them improve performance and confidence in their roles.
-
-How does Penny’s experience translate to Human Resources work?
-
-Many of Penny’s leadership and operational responsibilities overlap with core HR skills. She has experience with employee training, onboarding support, conflict resolution, communication, and team development. These experiences help her understand employee needs, workplace dynamics, and the importance of clear expectations and fair processes.
-
-What makes Penny a strong candidate for HR roles?
-
-Penny combines practical leadership experience with formal HR education. She understands how workplace policies and procedures affect employees in real situations because she has worked directly with teams on the front line. Her approach focuses on fairness, communication, and helping employees succeed while supporting organizational goals.
-
-What certifications or training has Penny completed?
-
-Penny has completed multiple professional development courses including training in People Analytics, QuickBooks Payroll, Python programming fundamentals, Outlook productivity tools, AI-powered people management, and workplace productivity tools. These courses help her stay current with both HR practices and modern workplace technology.
-
-What is Penny studying in school?
-
-Penny is currently pursuing a Bachelor of Science in Human Resource Management at Southern New Hampshire University. Her studies focus on topics such as talent acquisition, workforce planning, employee engagement, HR analytics, and the employee life cycle.
-
-How does Penny approach teamwork and workplace culture?
-
-Penny believes that strong workplaces are built on communication, fairness, and mutual respect. She values environments where employees feel supported and where leaders take time to listen and guide their teams. Her leadership style focuses on helping people grow while ensuring work gets done effectively.
-
-How does Penny handle conflict or difficult situations?
-
-Penny approaches conflict by listening carefully to all sides, identifying the underlying issue, and working toward practical solutions. Her experience in fast-paced service environments has helped her develop patience, professionalism, and the ability to remain calm while resolving problems.
-
-Why did Penny choose a career in Human Resources?
-
-Penny’s interest in HR developed through her leadership and training experiences. She saw how effective communication, fair treatment, and good management practices could make a significant difference in employee morale and team success. HR allows her to focus on helping organizations create environments where employees can perform well and feel supported.
-
-What kind of work environment does Penny thrive in?
-
-Penny performs well in collaborative environments where communication is clear, expectations are defined, and leaders support team development. She is comfortable in fast-paced workplaces and enjoys roles where she can help organize processes, support employees, and contribute to improving workplace systems.
-
-What motivates Penny professionally?
-
-Penny is motivated by helping people succeed in their roles and contributing to organizations that value their employees. She enjoys learning new skills, solving practical problems, and supporting teams so that both employees and organizations can perform at their best.
-
-What should employers know about Penny’s work ethic?
-
-Penny is dependable, adaptable, and committed to continuous learning. She consistently works to improve her skills through education and professional development. She approaches work with professionalism and takes pride in supporting both her team and the broader goals of the organization.
-`;
-
-    const chatlogEl = document.getElementById("chatlog");
-    const chatInput = document.getElementById("chat-input");
-
-    function printMessage(msg, who) {
-      const div = document.createElement("div");
-      div.style.marginBottom = ".5em";
-      div.innerHTML = `<strong>${who}:</strong> ${msg}`;
-      chatlogEl.appendChild(div);
-      chatlogEl.scrollTop = chatlogEl.scrollHeight;
-    }
-
-    async function handleChat(e) {
-      e.preventDefault();
-      const q = chatInput.value.trim();
-      if (!q) return false;
-
-      printMessage(q, "You");
-      chatInput.value = "";
-      printMessage("Thinking...", "AI");
-
-      try {
-        const messages = [
-          {
-            role: "system",
-            content:
-              "You are an assistant who helps answer questions about Penny Carter's resume and work experience, using only the data below.\n\n" +
-              resumeData,
-          },
-          { role: "user", content: q }
-        ];
-
-        const resp = await fetch("https://api.openai.com/v1/chat/completions", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer " + OPENAI_API_KEY
-          },
-          body: JSON.stringify({
-            model: "gpt-3.5-turbo",
-            messages,
-            max_tokens: 300,
-            n: 1,
-            stop: null,
-            temperature: 0
-          })
-        });
-
-        const data = await resp.json();
-
-        if (data.choices && data.choices[0] && data.choices[0].message) {
-          chatlogEl.lastChild.remove();
-          printMessage(data.choices[0].message.content, "AI");
-        } else if (data.error && data.error.message) {
-          chatlogEl.lastChild.remove();
-          printMessage("[API ERROR]: " + data.error.message, "AI");
-        } else {
-          chatlogEl.lastChild.remove();
-          printMessage("[No response]", "AI");
-        }
-      } catch (err) {
-        chatlogEl.lastChild.remove();
-        printMessage("[Connection error: " + err + "]", "AI");
-      }
-
-      return false;
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

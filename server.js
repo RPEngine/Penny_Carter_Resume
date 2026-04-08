@@ -60,7 +60,7 @@ app.post("/chat", async (req, res) => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "gpt-4.1-mini",
+        model: "mistral-7b-instruct-v0.3",
         temperature: 0.2,
         messages: [
           { role: "system", content: resumeContext },

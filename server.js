@@ -8,37 +8,55 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const resumeData = `
-Penny Carter is a Human Resources student and people-focused professional with experience in leadership, training, customer service, and operations.
+const resumeContext = `
+You are Penny Carter's AI resume assistant.
 
-She is currently pursuing a Bachelor's in Human Resource Management and is building toward roles that focus on employee support, onboarding, and people operations.
+Information about Penny:
 
-Her strengths include leadership, communication, conflict resolution, onboarding support, employee coaching, compliance awareness, scheduling, and workplace coordination.
+Penny Carter is pursuing a Bachelor's in Human Resource Management at Southern New Hampshire University (expected graduation February 2027).
 
-Work history includes:
-- Store Associate at Circle K
-- Shift Manager at Burger King
-- Customer Service Manager at McDonald's
-- Special Operations Team Lead at Whataburger
+She has leadership experience including:
+• Store Associate – Circle K
+• Shift Manager – Burger King
+• Customer Service Manager – McDonald's
+• Special Operations Team Lead – Whataburger
 
-Training includes:
-- Microsoft Office 365
-- QuickBooks Payroll
-- HRIS Basics
-- People Analytics (Intro)
-- Python (Beginner)
-- Outlook
-- AI Productivity Tools
+Skills include:
+• Training and onboarding employees
+• Conflict resolution
+• Team leadership
+• Scheduling and workforce coordination
+• Compliance and policy awareness
+• Customer service leadership
+
+Training:
+• Microsoft Office 365
+• QuickBooks Payroll
+• HRIS Basics
+• People Analytics Intro
+• Python Beginner
+• AI productivity tools
+
+She is seeking entry-level HR roles such as:
+HR Assistant
+HR Coordinator
+Onboarding Specialist
+People Operations roles
+
+If information is not in the resume, say:
+"That information is not currently included in Penny's profile."
 `;
 
-app.post("/api/chat", async (req, res) => {
+app.post("/chat", async (req, res) => {
+
+  const question = req.body.message;
+
   try {
-    const userMessage = req.body.message;
 
     const response = await fetch("https://api.featherless.ai/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${process.env.FEATHERLESS_API_KEY}`,
+        "Authorization": `Bearer ${process.env.FEATHERLESS_KEY}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
@@ -47,13 +65,11 @@ app.post("/api/chat", async (req, res) => {
         messages: [
           {
             role: "system",
-            content:
-              "You are Penny Carter's AI Resume Assistant. Answer only using the approved resume information below. If something is not in the data, say that the information is not currently included in Penny's profile.\n\n" +
-              resumeData
+            content: resumeContext
           },
           {
             role: "user",
-            content: userMessage
+            content: question
           }
         ]
       })
@@ -61,19 +77,22 @@ app.post("/api/chat", async (req, res) => {
 
     const data = await response.json();
 
-    if (!response.ok) {
-      return res.status(500).json({
-        error: data?.error?.message || "AI provider request failed."
-      });
-    }
+    const reply =
+      data?.choices?.[0]?.message?.content ||
+      "The assistant could not generate a response.";
 
-    const reply = data?.choices?.[0]?.message?.content || "No reply returned.";
     res.json({ reply });
+
   } catch (error) {
-    res.status(500).json({ error: "Server error while contacting AI provider." });
+
+    res.json({
+      reply: "The AI server encountered an error."
+    });
+
   }
+
 });
 
 app.listen(3000, () => {
-  console.log("AI server running on http://localhost:3000");
+  console.log("AI server running at http://localhost:3000");
 });

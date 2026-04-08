@@ -30,11 +30,14 @@ async function handleChat(e) {
   chatlog.scrollTop = chatlog.scrollHeight;
 
   try {
-    const response = await fetch(API_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: question })
-    });
+    const response = await fetch("https://penny-carter-resume.onrender.com/chat", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({ message: question })
+});
+
 
     const data = await response.json();
 

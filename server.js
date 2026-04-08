@@ -52,15 +52,15 @@ app.post("/chat", async (req, res) => {
 
   console.log("Received question:", question);
 
-  try 
-  {const response = await fetch("https://api.openai.com/v1/chat/completions", {
+  try {
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${process.env.FEATHERLESS_API_KEY}`,
+        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "mistral-7b-instruct-v0.3",
+        model: "gpt-4.1-mini",
         temperature: 0.2,
         messages: [
           { role: "system", content: resumeContext },
@@ -70,7 +70,7 @@ app.post("/chat", async (req, res) => {
     });
 
     const data = await response.json();
-    console.log("Featherless raw response:", data);
+    console.log("OpenAI raw response:", data);
 
     const reply =
       data?.choices?.[0]?.message?.content ||
@@ -86,6 +86,11 @@ app.post("/chat", async (req, res) => {
     });
   }
 });
+
+app.listen(3000, () => {
+  console.log("AI server running at http://localhost:3000");
+});
+
 
 app.listen(3000, () => {
   console.log("AI server running at http://localhost:3000");
